@@ -92,11 +92,24 @@ img {
     line-height: 24px;
     letter-spacing: 0.02em;
     color: #2E2F42;
-    transition-property: color,  text-decoration;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), text-decoration 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 
+
+.current {
+    position: relative;
+}
+.current::after {
+    content: "";
+    position:absolute;
+    left:0;
+    bottom:0;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background-color:#404BBF;
+}
 .header-link:hover,
 .header-link:focus {
     color: #404BBF;
@@ -184,9 +197,7 @@ img {
     padding: 16px 32px;
     margin-right:495px;
     margin-left:494px;
-    transition-property: background-color;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .hero-button:hover,
 .hero-button:focus {
@@ -355,9 +366,7 @@ img {
 
     color: #2E2F42;
     margin-bottom:8px;
-    transition-property: text-decoration;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition: text-decoration 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .team-item-text-list:not(:first-child) {
     display:flex;
@@ -384,9 +393,7 @@ img {
     display:flex;
     align-items: center;
     justify-content: center;
-    transition-property: background-color;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .team-item-text-link:hover,
 .team-item-text-link:focus {
@@ -411,9 +418,7 @@ img {
 
     color: #434455;
     margin-bottom:8px;
-    transition-property: color, text-decoration;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition: text-decoration 250ms cubic-bezier(0.4, 0, 0.2, 1), text-decoration 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .team-item-description:hover,
 .team-item-description:focus {
@@ -452,9 +457,7 @@ img {
     border: 1px solid #8E8F99;
     border-radius: 5px;
     fill: #8E8F99;
-    transition-property: box-shadow, fill, border;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .fourth-item-link:hover,
 .fourth-item-link:focus {
@@ -563,9 +566,7 @@ img {
     border-radius: 50%;
     justify-content:center;
     align-items: center;
-    transition-property: background-color;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-social-link:hover,
 .footer-social-link:focus {
@@ -605,9 +606,7 @@ img {
     line-height: 24px;
     color: #4D5AE5;
     padding: 12px 24px;
-    transition-property: background-color, color, border, box-shadow;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .portfolio-button:hover,
 .portfolio-button:focus {
@@ -617,6 +616,32 @@ img {
     cursor:pointer;
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
     
+}
+.gallery-item-top {
+    position:relative;
+    overflow:hidden;
+}
+.gallery-image-text {
+    position:absolute;
+    top:0;
+    left:0;
+    padding: 40px 32px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    /* or 150% */
+    
+    letter-spacing: 0.02em;
+    
+    /* CLOUD */
+    
+    color: #F4F4FD;
+    background-color: #4D5AE5;
+    height:100%;
+    transform: translateY(100%);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .gallery-list {
     list-style-type:none;
@@ -638,16 +663,24 @@ img {
 
 
 }
+
+.gallery-item-image {
+    
+}
+
+.gallery-item {
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 .gallery-item-link {
     text-decoration:none;
     cursor:pointer;
-    transition-property: box-shadow;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .gallery-item:hover,
 .gallery-item:focus {
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+}
+.gallery-item:hover .gallery-image-text {
+    transform: translateY(0%)
 }
 .gallery-item-header {
     font-family: 'Roboto', sans-serif;
@@ -675,4 +708,51 @@ img {
 /* SLATE */
     color: #434455;
     padding-left:16px;
+}
+
+
+.backdrop {
+    position: fixed;
+    top:0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(46, 47, 66, 0.4);
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+.modal {
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%) scaleX(1);
+    padding:24px;
+    width: 408px;
+    min-height: 576px;
+    background-color: #FCFCFC;
+    border-radius: 4px;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.backdrop.is-hidden .modal {
+    transform: translate(-50%, -50%) scaleX(0)
+}
+.modal-close {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background: #E7E9FC;
+    display: flex;
+    margin-left: auto;
+    align-items: center;
+    justify-content: center;    
+}
+.modal-close-button {
+    width: 100%;
+    height: 100%;
 }

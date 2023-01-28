@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css" integrity="sha512-wpPYUAdjBVSE4KJnH1VR1HeZfpl1ub8YT/NKx4PuQ5NmX2tKuGu6U/JRp5y+Y8XG2tV+wKQpNHVUX03MfMFn9Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@800&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/styles.css"/>
-    <script src="./js/modal.js"></script>
 </head>
 <body>
     <header class="header">
@@ -16,7 +15,7 @@
             <nav class="header-navigation">
                 <a href="./index.html" class="header-logo"><span class="header-logoa">Web</span>Studio</a>
                 <ul class="header-list">
-                    <li class="header-item"><a href="./index.html" class="header-link">Studio</a></li>
+                    <li class="header-item"><a href="./index.html" class="header-link current">Studio</a></li>
                     <li class="header-item"><a href="./portfolio.html" class="header-link">Portfolio</a></li>
                     <li class="header-item"><a href="/" class="header-link">Contacts</a></li>
                 </ul>
@@ -34,7 +33,7 @@
             <div class="container">
                 <h1 class="hero-title">Effective Solutions
                     for Your Business</h1>
-                <button type="button" class="hero-button">Order Service</button>
+                <button type="button" data-modal-open class="hero-button">Order Service</button>
             </div>
         </section>
         <section class="secondary">
@@ -349,5 +348,17 @@
             </div>
         </div>
     </footer>
+    <div class="backdrop is-hidden" data-modal>
+        <div class="modal">
+            <button class="modal-close" data-modal-close type="button">
+                <a href="" class="modal-close-button">
+                    <svg width="8" height="8">
+                        <use href="./images/symbol-defs.svg#icon-close-button"></use>
+                    </svg>
+                </a>
+            </button>
+        </div>
+    </div>
+    <script src="./js/modal.js"></script>
 </body>
 </html>
